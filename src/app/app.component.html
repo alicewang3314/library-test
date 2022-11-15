@@ -1,5 +1,4 @@
-<!-- <captor-theme-switch></captor-theme-switch>
- -->
+<captor-theme-switch></captor-theme-switch>
 
 <div style="margin: 70px 15%; height: 100%;">
   <form [formGroup]="fg" (ngSubmit)="submit()" captorForm>
@@ -17,24 +16,26 @@
     <br />
 
     <p>Date:</p>
-    <captor-input [type]="'date'" [control]="fg.controls.date"></captor-input>
+    <captor-date [control]="fg.controls.date"></captor-date>
     <br />
 
-    <p>Date with Min/Max</p>
-    <captor-input [type]="'date'" [control]="fg.controls.date" [maxDate]="maxDate" [minDate]="minDate"></captor-input>
+    <p>Date with Min/Max and required validation:</p>
+    <captor-date [control]="fg.controls.dateMinMax" [maxDate]="maxDate" [minDate]="minDate" [required]="true">
+    </captor-date>
     <br />
 
     <p>Date Range:</p>
-    <captor-input [type]="'dateRange'" [control]="fg.controls.dateRange" [maxDate]="maxDate" [minDate]="minDate">
-    </captor-input>
+    <captor-date [type]="'dateRange'" [control]="fg.controls.dateRange">
+    </captor-date>
     <br />
 
-    <p>Date Range with Min/Max:</p>
-    <captor-input [type]="'dateRange'" [control]="fg.controls.dateRange" [maxDate]="maxDate" [minDate]="minDate">
-    </captor-input>
+    <p>Date Range with Min/Max and required validation:</p>
+    <captor-date [type]="'dateRange'" [control]="fg.controls.dateRangeMinMax" [maxDate]="maxDate" [minDate]="minDate"
+      [required]="true">
+    </captor-date>
     <br />
 
-    <p>Textarea:</p>
+    <p>Textarea with disabled and predefined value:</p>
     <captor-input [type]="'textarea'" [disabled]="true" [readonly]="true" [control]="fg.controls.textarea">
     </captor-input>
     <br />
@@ -47,7 +48,7 @@
     </captor-input>
     <br />
 
-    <p>MinLen & MaxLen:</p>
+    <p>Input with min length and max length:</p>
     <captor-input [control]="fg.controls.default" [maxLen]="10" [minLen]="5">
     </captor-input>
 
@@ -56,23 +57,24 @@
     </captor-input>
     <br />
 
-    <!-- <p>Single select:</p>
+    <p>Single select:</p>
     <captor-select [placeholder]="'single one'" [required]="true" [control]="fg.controls.singleSelect"
       [entries]="selectEntries">
     </captor-select>
-    <br /> -->
+    <br />
 
-    <!-- <p>Multi select:</p>
-    <captor-select [placeholder]="'select multi'" [required]="true" [control]="fg.controls.multiSelect" [multi]="true"
+    <p>Multi select:</p>
+    <captor-select [placeholder]="'select multi'" [control]="fg.controls.multiSelect" [multi]="true"
       [entries]="selectEntries">
     </captor-select>
-    <br /> -->
+    <br />
 
-    <!-- <p>Checkbox:</p>
-    <captor-checkbox [name]="'checkbox'" [controlName]="'checkbox'" [disabled]="false"></captor-checkbox>
-    <br /> -->
+    <button type="reset" mat-flat-button color="accent">
+      <mat-icon>replay</mat-icon>Reset
+    </button> &nbsp;
 
-    <button type="reset" mat-flat-button color="accent">Reset</button>
-    <button type="submit" mat-flat-button color="accent">Submit</button>
+    <button type="submit" mat-flat-button color="primary">
+      <mat-icon>search</mat-icon>Submit
+    </button>
   </form>
 </div>

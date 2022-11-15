@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CaptorInputModule, CaptorFormModule } from 'components';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MaterialModule } from './material.module';
+
+// Captor components modules
+import { CaptorInputModule, CaptorFormModule, CaptorThemeModule, CaptorDateModule, CaptorSelectModule } from 'components';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +19,13 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
     CaptorInputModule,
     CaptorFormModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    CaptorThemeModule,
+    CaptorDateModule,
+    CaptorSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
